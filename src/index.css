@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sidebar-menu {
+  height: calc(100vh - 62px - 149px);
+  overflow-y: auto;
+}
+
+.main {
+  height: calc(100vh - 62px);
+}
+
+.main .content {
+  width: calc(100vw - 78px);
+}
+
+@media (min-width: 768px) {
+  .main .content {
+    width: calc(100vw - 210px);
+  }
+}
+
+.sidebar-menu-list {
+  display: none;
+}
+
+.custom-height {
+  height: calc(100vh - 62px - 149px);
+}
