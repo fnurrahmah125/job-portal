@@ -12,10 +12,16 @@
 }
 
 .main .content {
-  width: calc(100vw - 78px);
+  width: calc(100vw - 54px);
 }
 
 @media (min-width: 768px) {
+  .main .content {
+    width: calc(100vw - 192px);
+  }
+}
+
+@media (min-width: 1024px) {
   .main .content {
     width: calc(100vw - 210px);
   }

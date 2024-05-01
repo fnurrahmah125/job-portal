@@ -14,15 +14,15 @@ const ProfilePage = () => {
   }, []);
 
   return (
-    <div className="p-4 grid place-content-center py-20">
+    <div className="grid place-content-center p-4 py-20">
       {userData && (
         <div className="text-center">
           <img
             src={userData.image_url}
             alt={userData.name}
-            className="h-32 md:h-40 object-cover border-2 border-slate-600 rounded-full mx-auto mb-4"
+            className="mx-auto mb-4 h-32 rounded-full border-2 border-slate-600 object-cover md:h-40"
           />
-          <h1 className="text-3xl md:text-6xl font-medium tracking-wide mb-2">
+          <h1 className="mb-2 text-3xl font-medium tracking-wide md:text-6xl">
             {userData.name}
           </h1>
           <p>{userData.email}</p>

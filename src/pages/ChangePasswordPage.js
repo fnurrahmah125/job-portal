@@ -29,7 +29,7 @@ const ChangePasswordPage = () => {
           new_password: input.new_password,
           new_confirm_password: input.new_confirm_password,
         },
-        { headers: { Authorization: "Bearer " + Cookies.get("token") } }
+        { headers: { Authorization: "Bearer " + Cookies.get("token") } },
       )
       .then((res) => {
         setSuccessMessage("Password changed successfully.");
@@ -54,14 +54,14 @@ const ChangePasswordPage = () => {
 
   return (
     <div className="px-4 py-6 md:py-12">
-      <h1 className="text-center text-3xl md:text-4xl font-medium mb-6">
+      <h1 className="mb-6 text-center text-3xl font-medium md:text-4xl">
         Change Password
       </h1>
       {errorMessage && (
         <Alert
           color="red"
           onDismiss={() => setErrorMessage("")}
-          className="max-w-md mx-auto"
+          className="mx-auto max-w-md"
         >
           <span className="font-medium">Bad Request: </span>
           {errorMessage}
@@ -71,14 +71,14 @@ const ChangePasswordPage = () => {
         <Alert
           color="green"
           onDismiss={() => setSuccessMessage("")}
-          className="max-w-md mx-auto"
+          className="mx-auto max-w-md"
         >
           <span className="font-medium">Success: </span>
           {successMessage}
         </Alert>
       )}
       <form
-        className="max-w-md flex flex-col gap-4 mx-auto mt-6"
+        className="mx-auto mt-6 flex max-w-md flex-col gap-4"
         onSubmit={handleChangePassword}
       >
         <div>

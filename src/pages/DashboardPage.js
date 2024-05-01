@@ -17,10 +17,10 @@ const DashboardPage = () => {
 
   return (
     <div>
-      <div className="bg-blue-700 text-white text-3xl font-medium px-7 py-10">
+      <div className="bg-blue-700 px-7 py-10 text-3xl font-medium text-white">
         Welcome back, {userData && userData.name}!
       </div>
-      <div className="p-6 grid lg:grid-cols-2 gap-4">
+      <div className="grid gap-4 p-6 lg:grid-cols-2 lg:gap-6 xl:grid-cols-3">
         <Card>
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             View job listing
@@ -53,7 +53,7 @@ const DashboardPage = () => {
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             Create new vacancy
           </h5>
-          <p className="font-normal text-gray-700 dark:text-gray-400 line-clamp-5">
+          <p className="line-clamp-5 font-normal text-gray-700 dark:text-gray-400">
             Ready to build your dream team? Create a new vacancy to find the
             perfect fit for your organization. Define the role, set
             expectations, and attract top talent to propel your business
@@ -81,7 +81,7 @@ const DashboardPage = () => {
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             View your profile info
           </h5>
-          <p className="font-normal text-gray-700 dark:text-gray-400 line-clamp-5">
+          <p className="line-clamp-5 font-normal text-gray-700 dark:text-gray-400">
             Take a deep dive into your profile information to discover what
             makes you unique. From basic details like your name and email
             address to more personalized insights, explore the various facets

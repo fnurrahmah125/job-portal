@@ -46,19 +46,19 @@ const LoginPage = () => {
 
   return (
     <div className="h-screen px-4 py-32">
-      <h1 className="text-center text-5xl mb-6">Login</h1>
+      <h1 className="mb-6 text-center text-5xl">Login</h1>
       {errorMessage && (
         <Alert
           color="red"
           onDismiss={() => setErrorMessage("")}
-          className="max-w-md mx-auto"
+          className="mx-auto max-w-md"
         >
           <span className="font-medium">Bad Request: </span>
           {errorMessage}
         </Alert>
       )}
       <form
-        className="flex max-w-md flex-col gap-4 mx-auto mt-6"
+        className="mx-auto mt-6 flex max-w-md flex-col gap-4"
         onSubmit={handleLogin}
       >
         <div>
@@ -93,7 +93,7 @@ const LoginPage = () => {
           Submit
         </Button>
       </form>
-      <p className="text-center mt-8">
+      <p className="mt-8 text-center">
         Don't have an account?{" "}
         <Link
           to="/register"

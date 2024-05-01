@@ -17,16 +17,16 @@ const CitiesComponent = () => {
   ];
 
   return (
-    <section className="container mx-auto py-10 px-4 md:py-14">
+    <section className="container mx-auto px-4 py-10 md:py-14">
       <h2 className="text-center text-2xl font-semibold md:text-3xl md:leading-snug">
         Find opportunities in big cities
       </h2>
       <img src={map} alt="map" className="mx-auto" />
-      <ul className="flex flex-wrap gap-4 max-w-4xl mx-auto justify-center">
+      <ul className="mx-auto flex max-w-4xl flex-wrap justify-center gap-4">
         {cities.map((city, index) => (
           <li
             key={index}
-            className="rounded-md mb-2 px-4 py-2 capitalize text-center border border-slate-200"
+            className="mb-2 rounded-md border border-slate-200 px-4 py-2 text-center capitalize"
           >
             {city}
           </li>

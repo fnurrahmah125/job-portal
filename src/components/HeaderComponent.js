@@ -32,15 +32,15 @@ const HeaderComponent = ({ container }) => {
               </span>
             </Link>
           </Navbar.Brand>
-          <span className="hidden md:block md:mx-4">|</span>
+          <span className="hidden md:mx-4 md:block">|</span>
           <Link
             to="/job-vacancy"
-            className="hidden md:block hover:text-blue-500 transition duration-150"
+            className="hidden transition duration-150 hover:text-blue-500 md:block"
           >
             Job Vacancy
           </Link>
         </div>
-        <div className="hidden md:flex md:order-2">
+        <div className="hidden md:order-2 md:flex">
           {!Cookies.get("token") && (
             <Link to="/login">
               <Button color="blue" pill>
@@ -57,20 +57,20 @@ const HeaderComponent = ({ container }) => {
           )}
         </div>
         <Navbar.Toggle />
-        <Navbar.Collapse className="md:hidden absolute left-0 top-[60px] p-4 rounded-b-lg bg-white z-10">
+        <Navbar.Collapse className="absolute left-0 top-[60px] z-10 rounded-b-lg bg-white p-4 md:hidden">
           <Link to="/job-vacancy">
             <Navbar.Link>Job Vacancy</Navbar.Link>
           </Link>
           {!Cookies.get("token") && (
             <Link to="/login">
-              <Button color="blue" pill className="mt-8 md:mt-0 w-full">
+              <Button color="blue" pill className="mt-8 w-full md:mt-0">
                 Login
               </Button>
             </Link>
           )}
           {Cookies.get("token") && (
             <Link to="/dashboard">
-              <Button color="blue" pill className="mt-8 md:mt-0 w-full">
+              <Button color="blue" pill className="mt-8 w-full md:mt-0">
                 Dashboard
               </Button>
             </Link>

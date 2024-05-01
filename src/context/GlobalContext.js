@@ -8,6 +8,7 @@ export const GlobalProvider = (props) => {
   const [data, setData] = useState(null);
   const [fetchStatus, setFetchStatus] = useState(true);
   const [currentId, setCurrentId] = useState(-1);
+  const [cities, setCities] = useState([]);
 
   useEffect(() => {
     if (fetchStatus === true) {
@@ -15,6 +16,7 @@ export const GlobalProvider = (props) => {
         .get("https://dev-example.sanbercloud.com/api/job-vacancy")
         .then((res) => {
           setData([...res.data.data]);
+          setCities(getCityName(res.data.data));
         })
         .catch((error) => {
           console.error("Error fetching data:", error);
@@ -23,9 +25,15 @@ export const GlobalProvider = (props) => {
     }
   }, [fetchStatus, setFetchStatus]);
 
+  const getCityName = (data) => {
+    const cities = data.map((item) => item.company_city);
+    const filteredCities = [...new Set(cities)];
+    return filteredCities;
+  };
+
   if (data === null) {
     return (
-      <div className="h-screen w-screen grid place-content-center">
+      <div className="grid h-screen w-screen place-content-center">
         <Spinner aria-label="Extra large spinner example" size="xl" />
       </div>
     );
@@ -37,6 +45,7 @@ export const GlobalProvider = (props) => {
         data,
         fetchStatus,
         currentId,
+        cities,
         setFetchStatus,
         setCurrentId,
       }}

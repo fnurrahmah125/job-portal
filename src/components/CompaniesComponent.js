@@ -24,15 +24,15 @@ const CompaniesComponent = () => {
   ];
 
   return (
-    <section className="py-10 px-4 md:py-14 bg-blue-100">
+    <section className="bg-blue-100 px-4 py-10 md:py-14">
       <div className="container mx-auto">
-        <h2 className="text-center text-2xl font-semibold md:text-3xl md:leading-snug mb-10">
+        <h2 className="mb-10 text-center text-2xl font-semibold md:text-3xl md:leading-snug">
           We are trusted by
         </h2>
         <ul className="flex flex-wrap justify-center gap-4">
           {companies.map((company, index) => (
-            <li key={index} className="bg-white rounded-md w-48 py-2">
-              <img src={company} alt="company" className="h-16 mx-auto" />
+            <li key={index} className="w-48 rounded-md bg-white py-2">
+              <img src={company} alt="company" className="mx-auto h-16" />
             </li>
           ))}
         </ul>

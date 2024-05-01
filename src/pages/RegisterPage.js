@@ -40,9 +40,9 @@ const RegisterPage = () => {
 
   return (
     <div className="h-screen px-4 py-32">
-      <h1 className="text-center text-5xl mb-6">Register</h1>
+      <h1 className="mb-6 text-center text-5xl">Register</h1>
       <form
-        className="flex max-w-md flex-col gap-4 mx-auto"
+        className="mx-auto flex max-w-md flex-col gap-4"
         onSubmit={handleRegister}
       >
         <div>
@@ -105,7 +105,7 @@ const RegisterPage = () => {
           Submit
         </Button>
       </form>
-      <p className="text-center mt-8">
+      <p className="mt-8 text-center">
         Already have an account?{" "}
         <Link
           to="/login"

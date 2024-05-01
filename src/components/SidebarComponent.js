@@ -22,55 +22,55 @@ const SidebarComponent = () => {
   };
 
   return (
-    <aside className="text-gray-800 px-2">
-      <div className="py-4 border-b border-neutral-200">
+    <div className="px-2 text-gray-800">
+      <div className="border-b border-neutral-200 py-4">
         <Link
           to="/dashboard"
-          className="block px-4 py-2 rounded-lg transition duration-200 hover:bg-neutral-100 mb-3"
+          className="mb-3 block rounded-lg px-1 py-2 transition duration-200 hover:bg-neutral-100 md:px-2 lg:px-4"
         >
-          <BiBarChartSquare className="inline-block mr-1.5 text-2xl" />
+          <BiBarChartSquare className="mr-1.5 inline-block text-2xl" />
           <span className="hidden md:inline">Dashboard</span>
         </Link>
         <Link
           to="/dashboard/list-job-vacancy"
-          className="block px-4 py-2 rounded-lg transition duration-200 hover:bg-neutral-100 mb-3"
+          className="mb-3 block rounded-lg px-1 py-2 transition duration-200 hover:bg-neutral-100 md:px-2 lg:px-4"
         >
-          <BiListOl className="inline-block mr-1.5 text-2xl" />
+          <BiListOl className="mr-1.5 inline-block text-2xl" />
           <span className="hidden md:inline">Job List</span>
         </Link>
         <Link
           to="/dashboard/list-job-vacancy/form"
-          className="block px-4 py-2 rounded-lg transition duration-200 hover:bg-neutral-100 mb-3"
+          className="mb-3 block rounded-lg px-1 py-2 transition duration-200 hover:bg-neutral-100 md:px-2 lg:px-4"
           onClick={() => setCurrentId(-1)}
         >
-          <BiEdit className="inline-block mr-1.5 text-2xl" />
+          <BiEdit className="mr-1.5 inline-block text-2xl" />
           <span className="hidden md:inline">Create Data</span>
         </Link>
       </div>
       <div className="py-4">
         <Link
           to="/dashboard/profile"
-          className="block px-4 py-2 rounded-lg transition duration-200 hover:bg-neutral-100 mb-3"
+          className="mb-3 block rounded-lg px-1 py-2 transition duration-200 hover:bg-neutral-100 md:px-2 lg:px-4"
         >
-          <BiUser className="inline-block mr-1.5 text-2xl" />
+          <BiUser className="mr-1.5 inline-block text-2xl" />
           <span className="hidden md:inline">Profile</span>
         </Link>
         <Link
           to="/dashboard/change-password"
-          className="block px-4 py-2 rounded-lg transition duration-200 hover:bg-neutral-100 mb-3"
+          className="mb-3 block rounded-lg px-1 py-2 transition duration-200 hover:bg-neutral-100 md:px-2 lg:px-4"
         >
-          <BiKey className="inline-block mr-1.5 text-2xl" />
+          <BiKey className="mr-1.5 inline-block text-2xl" />
           <span className="hidden md:inline">Change Password</span>
         </Link>
         <button
-          className="block w-full text-left px-4 py-2 rounded-lg transition duration-200 hover:bg-neutral-100"
+          className="block w-full rounded-lg px-1 py-2 text-left transition duration-200 hover:bg-neutral-100 md:px-2 lg:px-4"
           onClick={handleLogout}
         >
-          <BiLogOut className="inline-block mr-1.5 text-2xl" />
+          <BiLogOut className="mr-1.5 inline-block text-2xl" />
           <span className="hidden md:inline">Logout</span>
         </button>
       </div>
-    </aside>
+    </div>
   );
 };
 

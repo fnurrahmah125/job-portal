@@ -103,7 +103,7 @@ const FormDataPage = () => {
             job_description,
             job_qualification,
           },
-          { headers: { Authorization: "Bearer " + Cookies.get("token") } }
+          { headers: { Authorization: "Bearer " + Cookies.get("token") } },
         )
         .then((res) => {
           setFetchStatus(true);
@@ -126,7 +126,7 @@ const FormDataPage = () => {
             job_description,
             job_qualification,
           },
-          { headers: { Authorization: "Bearer " + Cookies.get("token") } }
+          { headers: { Authorization: "Bearer " + Cookies.get("token") } },
         )
         .then((res) => {
           setFetchStatus(true);
@@ -139,12 +139,12 @@ const FormDataPage = () => {
 
   return (
     <div className="px-4 py-6 md:py-12">
-      <h1 className="text-center text-3xl md:text-4xl font-medium ">
+      <h1 className="text-center text-3xl font-medium md:text-4xl ">
         {currentId === -1 ? "Add new data" : "Edit data"}
       </h1>
 
       <form
-        className="max-w-md flex flex-col gap-4 mx-auto mt-6"
+        className="mx-auto mt-6 flex max-w-md flex-col gap-4"
         onSubmit={handleSubmit}
       >
         <div>

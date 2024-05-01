@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { CiSearch } from "react-icons/ci";
+import { GlobalContext } from "../context/GlobalContext";
 
 const SearchFilterComponent = ({ onSearch, onFilter }) => {
+  const { cities } = useContext(GlobalContext);
   const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState({
     job_tenure: "",
@@ -29,7 +31,7 @@ const SearchFilterComponent = ({ onSearch, onFilter }) => {
         <div className="relative">
           <input
             type="text"
-            className="w-full px-10 rounded-lg text-slate-600 border-neutral-300 placeholder:text-neutral-300"
+            className="w-full rounded-lg border-neutral-300 px-10 text-slate-600 placeholder:text-neutral-300"
             value={searchTerm}
             onChange={handleSearch}
             placeholder="Search by job title"
@@ -37,12 +39,12 @@ const SearchFilterComponent = ({ onSearch, onFilter }) => {
           <CiSearch className="absolute left-3 top-2 text-2xl text-neutral-400" />
         </div>
 
-        <div className="py-3 flex flex-col md:flex-row gap-4">
+        <div className="flex flex-col gap-4 py-3 md:flex-row">
           <select
             onChange={handleFilter}
             name="job_tenure"
             value={filter.job_tenure}
-            className="appearance-none w-full px-4 py-2 rounded-md cursor-pointer bg-neutral-50 border-neutral-300 text-slate-600 text-sm"
+            className="w-full cursor-pointer appearance-none rounded-md border-neutral-300 bg-neutral-50 px-4 py-2 text-sm text-slate-600"
           >
             <option value="">Job Tenure</option>
             <option value="fulltime">Fulltime</option>
@@ -55,7 +57,7 @@ const SearchFilterComponent = ({ onSearch, onFilter }) => {
             onChange={handleFilter}
             name="job_type"
             value={filter.job_type}
-            className="appearance-none w-full px-4 py-2 rounded-md cursor-pointer bg-neutral-50 border-neutral-300 text-slate-600 text-sm"
+            className="w-full cursor-pointer appearance-none rounded-md border-neutral-300 bg-neutral-50 px-4 py-2 text-sm text-slate-600"
           >
             <option value="">Job Type</option>
             <option value="remote">Remote</option>
@@ -66,14 +68,15 @@ const SearchFilterComponent = ({ onSearch, onFilter }) => {
             onChange={handleFilter}
             name="location"
             value={filter.location}
-            className="appearance-none w-full px-4 py-2 rounded-md cursor-pointer bg-neutral-50 border-neutral-300 text-slate-600 text-sm"
+            className="w-full cursor-pointer appearance-none rounded-md border-neutral-300 bg-neutral-50 px-4 py-2 text-sm text-slate-600"
           >
             <option value="">Location</option>
-            <option value="bandung">Bandung</option>
-            <option value="bekasi">Bekasi</option>
-            <option value="jakarta">Jakarta</option>
-            <option value="surabaya">Surabaya</option>
-            <option value="tangerang">Tangerang</option>
+            {cities &&
+              cities.map((city) => (
+                <option key={city} value={city.toLowerCase()}>
+                  {city}
+                </option>
+              ))}
           </select>
         </div>
       </div>

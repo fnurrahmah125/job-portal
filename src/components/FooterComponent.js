@@ -3,9 +3,9 @@ import logo from "../assets/logo.png";
 
 const FooterComponent = () => {
   return (
-    <Footer className="relative py-4 px-4 shadow-none rounded-none text-center">
+    <Footer className="relative rounded-none px-4 py-4 text-center shadow-none">
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between">
+        <div className="flex flex-col items-center justify-between md:flex-row">
           <Footer.Brand
             href="/"
             src={logo}
