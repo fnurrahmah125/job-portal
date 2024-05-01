@@ -45,7 +45,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="h-screen px-4 py-32">
+    <div className="min-h-screen border-y border-neutral-200 px-4 py-20">
       <h1 className="mb-6 text-center text-5xl">Login</h1>
       {errorMessage && (
         <Alert

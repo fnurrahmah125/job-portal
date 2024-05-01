@@ -125,7 +125,9 @@ const App = () => {
               path="/login"
               element={
                 <LoginRoute>
-                  <LoginPage />
+                  <DefaultLayout>
+                    <LoginPage />
+                  </DefaultLayout>
                 </LoginRoute>
               }
             />
@@ -133,7 +135,9 @@ const App = () => {
               path="/register"
               element={
                 <LoginRoute>
-                  <RegisterPage />
+                  <DefaultLayout>
+                    <RegisterPage />
+                  </DefaultLayout>
                 </LoginRoute>
               }
             />
